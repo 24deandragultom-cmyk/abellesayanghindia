@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindia New Album - Abelle Tickets | LieTIX.com</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Abelle Tickets</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tickets">Tickets</a></li>
+                <li><a href="#dates">Dates & Venues</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+        <button class="cta-nav" onclick="openWhatsApp()">Contact Us</button>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Hindia's New Era: Album Tour Tickets</h1>
+                <p>Secure your spot for the most anticipated music event of the year. Exclusive passes available now at LieTIX.com.</p>
+                <a href="#tickets" class="btn primary-btn">Explore Tickets <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image">
+                <img src="image/hindiaiiaia.png" alt="Hindia Concert Stage" loading="lazy">
+                <div class="glow-effect"></div>
+            </div>
+        </section>
+
+        <section id="tickets" class="tickets-section">
+            <h2>Ticket Categories</h2>
+            <div class="ticket-grid">
+                <div class="ticket-card">
+                    <i class="fas fa-compact-disc icon-large"></i>
+                    <h3>General Admission</h3>
+                    <p>Standard access to the concert venue. Enjoy the full show!</p>
+                    <span class="price">IDR 350K</span>
+                    <a href="#" class="btn secondary-btn" data-ticket="GA">Buy Now</a>
+                </div>
+
+                <div class="ticket-card featured">
+                    <i class="fas fa-star icon-large"></i>
+                    <h3>Premium View</h3>
+                    <p>Closer stage access, dedicated entry line, and exclusive merch bundle.</p>
+                    <span class="price">IDR 750K</span>
+                    <a href="#" class="btn primary-btn" data-ticket="Premium">Buy Now</a>
+                </div>
+
+                <div class="ticket-card">
+                    <i class="fas fa-handshake icon-large"></i>
+                    <h3>VIP Meet & Greet</h3>
+                    <p>All-access pass, M&G session with Hindia, and signed album.</p>
+                    <span class="price">IDR 1.8M</span>
+                    <a href="#" class="btn secondary-btn" data-ticket="VIP">Buy Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="dates" class="dates-section">
+            <h2>Tour Dates & Venues</h2>
+            <div class="date-list">
+                <div class="date-item">
+                    <div class="date-info">
+                        <span class="city">JAKARTA</span>
+                        <span class="venue">Istora Senayan</span>
+                    </div>
+                    <span class="date">Oct 12, 2025</span>
+                    <a href="#" class="btn small-btn">Details</a>
+                </div>
+                <div class="date-item">
+                    <div class="date-info">
+                        <span class="city">SINGAPORE</span>
+                        <span class="venue">The Star Theatre</span>
+                    </div>
+                    <span class="date">Nov 05, 2025</span>
+                    <a href="#" class="btn small-btn">Details</a>
+                </div>
+                <div class="date-item">
+                    <div class="date-info">
+                        <span class="city">KUALA LUMPUR</span>
+                        <span class="venue">Zepp Kuala Lumpur</span>
+                    </div>
+                    <span class="date">Nov 08, 2025</span>
+                    <a href="#" class="btn small-btn">Details</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq" class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <input type="checkbox" id="faq1">
+                    <label for="faq1">Is there an age limit for the concert?</label>
+                    <div class="faq-content">
+                        <p>The concert is open to all ages, but attendees under 14 must be accompanied by an adult.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq2">
+                    <label for="faq2">Can I refund my ticket?</label>
+                    <div class="faq-content">
+                        <p>All ticket sales are final. Refunds are only issued if the event is officially cancelled.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Abelle Tickets. All Rights Reserved. LieTIX.com</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="mobile-buy-btn" onclick="openWhatsApp()">
+        <i class="fas fa-ticket-alt"></i> Buy Now
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

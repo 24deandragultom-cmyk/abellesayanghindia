@@ -1,0 +1,555 @@
+/* Custom Properties / Variables */
+:root {
+    --color-primary: #2C3E50; /* Abu Tua (Charcoal) */
+    --color-secondary: #9B59B6; /* Ungu/Violet untuk aksen */
+    --color-text: #ECF0F1; /* Abu Muda/Putih untuk teks */
+    --color-background: #1C2833; /* Background yang lebih gelap */
+    --color-light-bg: #273746; /* Latar belakang bagian */
+    --color-success: #2ECC71; /* Warna hijau untuk success */
+    --font-primary: 'Montserrat', sans-serif; /* Font modern yang mudah dibaca */
+    --font-size-base: 16px;
+}
+
+/* Import Font (Gunakan Google Fonts untuk Montserrat) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    scroll-behavior: smooth;
+    padding-top: 60px; /* Jarak untuk fixed header */
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #C39BD3; /* Sedikit lebih terang */
+}
+
+ul {
+    list-style: none;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.primary-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    border: 2px solid var(--color-secondary);
+}
+
+.primary-btn:hover {
+    background-color: transparent;
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+}
+
+.secondary-btn:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+}
+
+.small-btn {
+    padding: 5px 15px;
+    font-size: 0.8rem;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--color-secondary);
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--color-text);
+    padding: 10px 15px;
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: var(--color-secondary);
+}
+
+.cta-nav {
+    background-color: var(--color-success);
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-nav:hover {
+    background-color: #27AE60;
+}
+
+.menu-toggle {
+    display: none; /* Sembunyikan di desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 40px;
+    min-height: calc(100vh - 60px);
+    background: linear-gradient(135deg, var(--color-background) 0%, var(--color-primary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 50%;
+    z-index: 10;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: white;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #BDC3C7;
+}
+
+.hero-image {
+    max-width: 45%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Animasi Glow Effect */
+.glow-effect {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(155, 89, 182, 0.4); /* Warna sekunder semi-transparan */
+    border-radius: 50%;
+    filter: blur(50px);
+    animation: pulseGlow 4s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from {
+        transform: scale(0.8);
+        opacity: 0.6;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Sections Styling */
+section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background-color: var(--color-light-bg);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Ticket Grid */
+.tickets-section {
+    padding: 60px 20px;
+}
+
+.ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.ticket-card {
+    background-color: var(--color-primary);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ticket-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.ticket-card.featured {
+    border: 3px solid var(--color-secondary);
+    transform: scale(1.05);
+}
+
+.ticket-card.featured:hover {
+    transform: scale(1.1);
+}
+
+.icon-large {
+    font-size: 3rem;
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+    animation: iconBounce 1s infinite alternate;
+}
+
+@keyframes iconBounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+.ticket-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.ticket-card p {
+    margin-bottom: 20px;
+    color: #BDC3C7;
+    flex-grow: 1;
+}
+
+.ticket-card .price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--color-success);
+    margin-bottom: 20px;
+}
+
+/* Tour Dates */
+.date-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.date-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary);
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-secondary);
+    transition: background-color 0.3s;
+}
+
+.date-item:hover {
+    background-color: #34495E;
+}
+
+.date-info {
+    text-align: left;
+}
+
+.date-info .city {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: block;
+    color: white;
+}
+
+.date-info .venue {
+    font-size: 0.9rem;
+    color: #BDC3C7;
+}
+
+.date-item .date {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-success);
+}
+
+/* FAQ Section */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    background-color: var(--color-primary);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-item input {
+    display: none;
+}
+
+.faq-item label {
+    display: block;
+    padding: 15px 20px;
+    background-color: #34495E;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.faq-item label:hover {
+    background-color: #4A637C;
+}
+
+.faq-item label::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.faq-item input:checked + label::after {
+    content: '-';
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.faq-item input:checked ~ .faq-content {
+    max-height: 200px; /* Nilai yang cukup besar */
+    padding: 15px 20px;
+}
+
+.faq-content p {
+    color: #BDC3C7;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-primary);
+    color: #BDC3C7;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 15px;
+}
+
+.social-links a:hover {
+    color: var(--color-secondary);
+}
+
+/* Mobile Fixed Button */
+.mobile-buy-btn {
+    display: none; /* Sembunyikan di desktop */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-success);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    animation: floatButton 2s infinite ease-in-out;
+}
+
+.mobile-buy-btn i {
+    margin-right: 5px;
+}
+
+@keyframes floatButton {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+/* Responsiveness (Mobile First - diutamakan, lalu perbaikan untuk layar lebih besar) */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        padding: 60px 20px;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .hero-content, .hero-image {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Ticket Grid menyesuaikan di sini */
+    .ticket-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .social-links {
+        margin-top: 15px;
+    }
+
+    /* Navigasi */
+    header {
+        padding: 10px 20px;
+    }
+    
+    nav {
+        display: none; /* Sembunyikan navigasi default */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-primary);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    
+    nav ul li a {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    nav.active {
+        display: flex; /* Tampilkan saat aktif */
+    }
+
+    .menu-toggle {
+        display: block; /* Tampilkan tombol menu */
+    }
+
+    .cta-nav {
+        display: none; /* Sembunyikan CTA di header mobile */
+    }
+
+    /* Tampilkan tombol Buy Now di mobile */
+    .mobile-buy-btn {
+        display: flex;
+        align-items: center;
+    }
+}
